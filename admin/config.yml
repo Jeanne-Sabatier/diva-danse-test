@@ -14,20 +14,15 @@ collections:
   # =============================================
   - name: "actualites"
     label: "Actualités"
-    files:
-      - name: "liste-actualites"
-        label: "Toutes les actualités"
-        file: "actualites/actualites.json"
-        fields:
-          - name: "actualites"
-            label: "Actualités"
-            widget: "list"
-            label_singular: "Actualité"
-            fields:
-              - { label: "Titre", name: "titre", widget: "string" }
-              - { label: "Date", name: "date", widget: "string", hint: "Format : JJ/MM/AA" }
-              - { label: "Texte", name: "texte", widget: "text" }
-              - { label: "Image", name: "image", widget: "image" }
+    label_singular: "Actualité"
+    folder: "actualites/data"
+    create: true
+    format: json
+    fields:
+      - { label: "Titre", name: "titre", widget: "string" }
+      - { label: "Date", name: "date", widget: "string", hint: "Format : JJ/MM/AA" }
+      - { label: "Texte", name: "texte", widget: "text" }
+      - { label: "Image", name: "image", widget: "image" }
 
   # =============================================
   # TARIFS
@@ -61,44 +56,43 @@ collections:
               - { label: "Prix (€)", name: "prix", widget: "number" }
 
   # =============================================
-  # COURS ET PROFESSEURS
+  # PROFESSEURS
   # =============================================
   - name: "profs"
     label: "Professeurs"
-    files:
-      - name: "liste-profs"
-        label: "Tous les professeurs"
-        file: "cours/profs.json"
-        fields:
-          - name: "profs"
-            label: "Professeurs"
-            widget: "list"
-            label_singular: "Professeur"
-            fields:
-              - { label: "ID (sans majuscule, sans espace)", name: "id", widget: "string" }
-              - { label: "Nom affiché", name: "name", widget: "string" }
-              - { label: "Styles enseignés", name: "styles", widget: "list", field: { label: "Style", name: "style", widget: "string" } }
-              - { label: "Biographie", name: "bio", widget: "text" }
-              - { label: "Photo grande (modale)", name: "img", widget: "image" }
-              - { label: "Photo profil (carte cours)", name: "profil", widget: "image" }
+    label_singular: "Professeur"
+    folder: "cours/data/profs"
+    create: true
+    format: json
+    fields:
+      - { label: "ID (sans majuscule, sans espace)", name: "id", widget: "string" }
+      - { label: "Nom affiché", name: "name", widget: "string" }
+      - name: "styles"
+        label: "Styles enseignés"
+        widget: "list"
+        field: { label: "Style", name: "style", widget: "string" }
+      - { label: "Biographie", name: "bio", widget: "text" }
+      - { label: "Photo grande (modale)", name: "img", widget: "image" }
+      - { label: "Photo profil (carte cours)", name: "profil", widget: "image" }
 
+  # =============================================
+  # STYLES DE DANSE
+  # =============================================
   - name: "styles"
     label: "Styles de danse"
-    files:
-      - name: "liste-styles"
-        label: "Tous les styles"
-        file: "cours/styles.json"
-        fields:
-          - name: "styles"
-            label: "Styles"
-            widget: "list"
-            label_singular: "Style"
-            fields:
-              - { label: "ID (en minuscules)", name: "id", widget: "string" }
-              - { label: "Nom affiché", name: "name", widget: "string" }
-              - { label: "Description", name: "desc", widget: "text" }
-              - { label: "Image", name: "img", widget: "image" }
+    label_singular: "Style"
+    folder: "cours/data/styles"
+    create: true
+    format: json
+    fields:
+      - { label: "ID (en minuscules)", name: "id", widget: "string" }
+      - { label: "Nom affiché", name: "name", widget: "string" }
+      - { label: "Description", name: "desc", widget: "text" }
+      - { label: "Image", name: "img", widget: "image" }
 
+  # =============================================
+  # PLANNING
+  # =============================================
   - name: "planning"
     label: "Planning"
     files:
@@ -115,70 +109,60 @@ collections:
               - label: "Lundi Studio 1"
                 name: "lundi_s1"
                 widget: "object"
-                required: false
                 fields:
                   - { label: "Cours", name: "cours", widget: "string" }
                   - { label: "Prof", name: "prof", widget: "string" }
               - label: "Lundi Studio 2"
                 name: "lundi_s2"
                 widget: "object"
-                required: false
                 fields:
                   - { label: "Cours", name: "cours", widget: "string" }
                   - { label: "Prof", name: "prof", widget: "string" }
               - label: "Mardi Studio 1"
                 name: "mardi_s1"
                 widget: "object"
-                required: false
                 fields:
                   - { label: "Cours", name: "cours", widget: "string" }
                   - { label: "Prof", name: "prof", widget: "string" }
               - label: "Mardi Studio 2"
                 name: "mardi_s2"
                 widget: "object"
-                required: false
                 fields:
                   - { label: "Cours", name: "cours", widget: "string" }
                   - { label: "Prof", name: "prof", widget: "string" }
               - label: "Mercredi Studio 1"
                 name: "mercredi_s1"
                 widget: "object"
-                required: false
                 fields:
                   - { label: "Cours", name: "cours", widget: "string" }
                   - { label: "Prof", name: "prof", widget: "string" }
               - label: "Mercredi Studio 2"
                 name: "mercredi_s2"
                 widget: "object"
-                required: false
                 fields:
                   - { label: "Cours", name: "cours", widget: "string" }
                   - { label: "Prof", name: "prof", widget: "string" }
               - label: "Jeudi Studio 1"
                 name: "jeudi_s1"
                 widget: "object"
-                required: false
                 fields:
                   - { label: "Cours", name: "cours", widget: "string" }
                   - { label: "Prof", name: "prof", widget: "string" }
               - label: "Jeudi Studio 2"
                 name: "jeudi_s2"
                 widget: "object"
-                required: false
                 fields:
                   - { label: "Cours", name: "cours", widget: "string" }
                   - { label: "Prof", name: "prof", widget: "string" }
               - label: "Vendredi Studio 1"
                 name: "vendredi_s1"
                 widget: "object"
-                required: false
                 fields:
                   - { label: "Cours", name: "cours", widget: "string" }
                   - { label: "Prof", name: "prof", widget: "string" }
               - label: "Vendredi Studio 2"
                 name: "vendredi_s2"
                 widget: "object"
-                required: false
                 fields:
                   - { label: "Cours", name: "cours", widget: "string" }
                   - { label: "Prof", name: "prof", widget: "string" }
