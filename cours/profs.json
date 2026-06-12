@@ -3,7 +3,11 @@
     {
       "id": "maeva",
       "name": "MAEVA",
-      "styles": ["Lyrical", "Sensuel Contempo", "Heels"],
+      "styles": [
+        "Lyrical",
+        "Sensuel Contempo",
+        "Heels"
+      ],
       "bio": "lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       "img": "/Images/Profs/Maeva.png",
       "profil": "/Images/Profs/Profs-profils/Maeva-profil.png"
@@ -11,7 +15,11 @@
     {
       "id": "laurence",
       "name": "LAURENCE",
-      "styles": ["Modern Jazz", "Broadway Jazz", "Street Jazz"],
+      "styles": [
+        "Modern Jazz",
+        "Broadway Jazz",
+        "Street Jazz"
+      ],
       "bio": "lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       "img": "/Images/Profs/Laurence.png",
       "profil": "/Images/Profs/Profs-profils/Laurence-profil.png"
@@ -19,7 +27,10 @@
     {
       "id": "magdalena",
       "name": "MAGDALENA",
-      "styles": ["Heels Inter", "Heels Avancé"],
+      "styles": [
+        "Heels Inter",
+        "Heels Avancé"
+      ],
       "bio": "lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       "img": "/Images/Profs/Magdalena.png",
       "profil": "/Images/Profs/Profs-profils/Magdalena-profil.png"
@@ -27,7 +38,10 @@
     {
       "id": "mister k",
       "name": "MISTER K",
-      "styles": ["Waacking", "Commercial Girly"],
+      "styles": [
+        "Waacking",
+        "Commercial Girly"
+      ],
       "bio": "lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       "img": "/Images/Profs/Mister_K.png",
       "profil": "/Images/Profs/Profs-profils/Mister_K-profil.png"
@@ -35,7 +49,10 @@
     {
       "id": "redlysa",
       "name": "REDLYSA",
-      "styles": ["Dancehall", "Reggaeton"],
+      "styles": [
+        "Dancehall",
+        "Reggaeton"
+      ],
       "bio": "lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       "img": "/Images/Profs/Redlysa.png",
       "profil": "/Images/Profs/Profs-profils/Redlysa-profil.png"
@@ -43,7 +60,10 @@
     {
       "id": "noha",
       "name": "NOHA",
-      "styles": ["Floorwork", "Twerk"],
+      "styles": [
+        "Floorwork",
+        "Twerk"
+      ],
       "bio": "lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       "img": "/Images/Profs/Noha.png",
       "profil": "/Images/Profs/Profs-profils/Noha-profil.png"
@@ -51,7 +71,9 @@
     {
       "id": "thom",
       "name": "THOM",
-      "styles": ["Commercial"],
+      "styles": [
+        "Commercial"
+      ],
       "bio": "lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       "img": "/Images/Profs/Thom.png",
       "profil": "/Images/Profs/Profs-profils/Thom-profil.png"
@@ -59,10 +81,21 @@
     {
       "id": "aurore",
       "name": "AURORE",
-      "styles": ["Jazz Sensuel", "Heels Cabaret", "Heels Escarpins"],
+      "styles": [
+        "Jazz Sensuel",
+        "Heels Cabaret",
+        "Heels Escarpins"
+      ],
       "bio": "lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       "img": "/Images/Profs/Aurore.png",
       "profil": "/Images/Profs/Profs-profils/Aurore-profil.png"
+    },
+    {
+      "id": "7",
+      "name": "Rose",
+      "bio": "MA bou d'amour de ma vie",
+      "img": "/Images/Actus/winnie-doudou.png",
+      "profil": "/Images/Actus/winnie-doudou.png"
     }
   ]
 }
