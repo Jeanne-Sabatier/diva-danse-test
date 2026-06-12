@@ -23,6 +23,12 @@
       "date": "08/02/26",
       "texte": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sem quam, aliquam ac maximus consequat, rutrum nec nulla.",
       "image": "/Images/Actus/img_7661-high.webp"
+    },
+    {
+      "titre": "Rose",
+      "date": "12/02",
+      "texte": "Coucou",
+      "image": "/Images/Actus/winnie-doudou.png"
     }
   ]
 }
