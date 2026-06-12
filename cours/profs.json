@@ -89,13 +89,6 @@
       "bio": "lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       "img": "/Images/Profs/Aurore.png",
       "profil": "/Images/Profs/Profs-profils/Aurore-profil.png"
-    },
-    {
-      "id": "7",
-      "name": "Rose",
-      "bio": "MA bou d'amour de ma vie",
-      "img": "/Images/Actus/winnie-doudou.png",
-      "profil": "/Images/Actus/winnie-doudou.png"
     }
   ]
 }
