@@ -1,27 +1,25 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-  // On charge les 3 fichiers JSON en parallèle
   Promise.all([
     fetch("/cours/profs.json").then(r => r.json()),
     fetch("/cours/styles.json").then(r => r.json()),
     fetch("/cours/planning.json").then(r => r.json())
   ]).then(([profsData, stylesData, planningData]) => {
 
-    // On convertit les tableaux en objets pour accès rapide par id
+    // Conversion en objets pour accès rapide
     const profs = {};
-    profsData.forEach(p => { profs[p.id] = p; });
+    profsData.profs.forEach(p => { profs[p.id] = p; });
 
     const styleData = {};
-    stylesData.forEach(s => { styleData[s.id] = s; });
+    stylesData.styles.forEach(s => { styleData[s.id] = s; });
 
     // =============================================
-    // 1. MISE À JOUR DES CARTES DE COURS (profs)
+    // 1. MISE À JOUR DES CARTES DE COURS
     // =============================================
     document.querySelectorAll(".cours-card").forEach(card => {
       const profNameEl = card.querySelector(".prof-name");
       const profPhotoEl = card.querySelector(".prof-photo");
       const profDescEl = card.querySelector(".prof-desc");
-
       if (!profNameEl) return;
 
       const profId = profNameEl.textContent.toLowerCase().trim();
@@ -71,7 +69,6 @@ document.addEventListener("DOMContentLoaded", () => {
           filterProf.value = "all";
           filterStyle.value = targetStyle;
           filterPlanning();
-
           const targetElement = document.getElementById("planning");
           if (targetElement) {
             const offset = 80;
@@ -160,12 +157,10 @@ document.addEventListener("DOMContentLoaded", () => {
     if (styleCloseBtn) styleCloseBtn.addEventListener("click", closeStyleModal);
     styleModal.addEventListener("click", e => { if (e.target === styleModal) closeStyleModal(); });
 
-  }).catch(err => {
-    console.error("Erreur chargement données :", err);
-  });
+  }).catch(err => console.error("Erreur chargement données :", err));
 
   // =============================================
-  // 5. HAMBURGER MENU
+  // 5. HAMBURGER
   // =============================================
   (function () {
     const hamburger = document.getElementById("hamburger");
