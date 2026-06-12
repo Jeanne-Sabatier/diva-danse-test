@@ -95,12 +95,6 @@
       "name": "COMMERCIAL",
       "desc": "lorem ipsum dolor sit amet.",
       "img": "/Images/Styles/Styles_popup/commercial.png"
-    },
-    {
-      "id": "rose",
-      "name": "Rose",
-      "desc": "Bou d'amour",
-      "img": "/Images/Actus/winnie-doudou.png"
     }
   ]
 }
