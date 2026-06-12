@@ -2,19 +2,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
   fetch("/actualites/actualites.json")
     .then(r => r.json())
-    .then(actus => {
-
-      // =============================================
-      // GÉNÉRATION DES SECTIONS ACTUALITÉS
-      // =============================================
+    .then(data => {
+      const actus = data.actualites;
       const body = document.querySelector("body");
-      const footer = document.querySelector(".footer-container");
       const lineFooter = document.querySelector(".line-footer");
 
-      // On supprime les sections actu existantes
       document.querySelectorAll(".actu-section").forEach(s => s.remove());
 
-      // On recrée les sections depuis le JSON
       actus.forEach((actu, index) => {
         const isDark = index % 2 === 0;
         const section = document.createElement("section");
@@ -25,7 +19,6 @@ document.addEventListener("DOMContentLoaded", () => {
             <img class="actu-img" src="${actu.image}" alt="${actu.titre}" />
           </div>
         `;
-
         const textBlock = `
           <div class="actu-text-block">
             <h2 class="actu-title">${actu.titre}</h2>
@@ -34,20 +27,12 @@ document.addEventListener("DOMContentLoaded", () => {
           </div>
         `;
 
-        // Alternance image gauche / droite
-        section.innerHTML = isDark
-          ? imageBlock + textBlock
-          : textBlock + imageBlock;
-
+        section.innerHTML = isDark ? imageBlock + textBlock : textBlock + imageBlock;
         body.insertBefore(section, lineFooter);
       });
-
     })
     .catch(err => console.error("Erreur chargement actualités :", err));
 
-  // =============================================
-  // HAMBURGER
-  // =============================================
   (function () {
     const hamburger = document.getElementById("hamburger");
     const nav = document.getElementById("nav");
